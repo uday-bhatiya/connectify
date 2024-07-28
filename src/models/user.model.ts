@@ -17,7 +17,7 @@ export interface User extends Document {
 const userSchema: Schema<User> = new Schema({
     fullName: {
         type: String,
-        required: true,
+        // required: true,
         trim: true,
         index: true
     },
@@ -39,7 +39,6 @@ const userSchema: Schema<User> = new Schema({
     },
     avatar: {
         type: String, // URL
-        required: true
     },
     isVerified: {
         type: Boolean,
