@@ -29,6 +29,6 @@ export const config = {
         '/sign-in',
         '/',
         '/dashboard/:path*',
-        '/verify/path:*'
+        '/verify-code'
     ]
 }
