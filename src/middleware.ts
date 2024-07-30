@@ -5,9 +5,7 @@ export { default } from "next-auth/middleware";
 export async function middleware(request: NextRequest) {
 
     const token = await getToken({
-        req: request,
-        salt: '',
-        secret: ''
+        req: request
     })
     const url = request.nextUrl
 
