@@ -1,5 +1,5 @@
 import NextAuth from "next-auth";
-import { NextAuthConfig } from "next-auth";
+import { NextAuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from 'bcryptjs';
@@ -7,7 +7,7 @@ import UserModel from "@/models/user.model";
 import dbConnect from "@/lib/dbConnect";
 
 
-export const authOptions: NextAuthConfig = {
+export const authOptions: NextAuthOptions = {
     providers: [
         CredentialsProvider({
             id: "cr,edentials",

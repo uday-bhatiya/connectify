@@ -49,7 +49,7 @@ export default function page() {
                 title: "Success",
                 description: response.data.message
             })
-            router.replace(`/verify-code/${username}`);
+            router.replace(`/home/verify-code/${username}`);
             setIsSubmitting(false);
         } catch (error) {
             console.error("Error in signup", error)
