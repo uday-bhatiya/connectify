@@ -49,7 +49,7 @@ export default function page() {
                 title: "Success",
                 description: response.data.message
             })
-            router.replace(`/home/verify-code/${username}`);
+            router.replace(`/auth/verify-code/${username}`);
             setIsSubmitting(false);
         } catch (error) {
             console.error("Error in signup", error)
@@ -129,7 +129,7 @@ export default function page() {
                                 <FormItem>
                                     <FormLabel>Email</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="email" {...field} />
+                                        <Input placeholder="email" type="email " {...field} />
                                     </FormControl>
                                     {/* <FormDescription>
                                         This is your public display name.
@@ -146,7 +146,7 @@ export default function page() {
                                 <FormItem>
                                     <FormLabel>Password</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="password" {...field} />
+                                        <Input placeholder="password" type="password" {...field} />
                                     </FormControl>
                                     {/* <FormDescription>
                                         This is your public display name.

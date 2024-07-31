@@ -7,8 +7,12 @@ export async function POST(request: Request) {
 
     try {
 
+        console.log("in verify route")
         const { username, code } = await request.json()
+        console.log(username)
+        console.log(code)
         const decodedUsername = decodeURIComponent(username)
+        console.log(decodedUsername)
 
         const user = await UserModel.findOne({ username: decodedUsername })
 

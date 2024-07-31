@@ -27,23 +27,25 @@ export default function Verification() {
     })
 
     const onSubmit = async (data: z.infer<typeof verifySchema>) => {
+        console.log(data)
         setIsSubmitting(true)
         try {
-            const response = await axios.post<ApiResponse>('/verify-code', {
+            console.log("In verify")
+            const response = await axios.post<ApiResponse>('/api/verify-code', {
                 username: params.username,
                 code: data.code
             })
-            console.log("In verify")
 
             toast({
                 title: "Success",
                 description: response.data.message
             })
 
-            router.replace("/sign-in")
+            router.replace("/auth/sign-in")
             setIsSubmitting(false)
         } catch (error) {
-            console.error("Error in signup", error)
+            console.log(data)
+            console.error("Error in Verification", error)
             const axiosError = error as AxiosError<ApiResponse>;
             let errorMessage = axiosError.response?.data.message;
             toast({
