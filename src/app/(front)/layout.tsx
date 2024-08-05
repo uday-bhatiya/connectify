@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import CustomProvider from "../provider";
 import BaseComponent from "@/components/base/Base";
+import AuthProvider from "../contex/AuthProvider";
 
 export const metadata: Metadata = {
   title: "Connectify",
@@ -16,11 +17,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+      <AuthProvider>
     <CustomProvider>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
         <BaseComponent>{children}</BaseComponent>
         <Toaster />
       </ThemeProvider>
     </CustomProvider>
+
+      </AuthProvider>
   );
 }

@@ -1,8 +1,21 @@
-import { NextAuthOptions } from 'next-auth';
+import { ISODateString, NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import bcrypt from 'bcryptjs';
 import dbConnect from '@/lib/dbConnect';
 import UserModel from '@/models/user.model';
+
+export interface CustomUser {
+  id?: string | null;
+  name?: string | null;
+  username?: string | null;
+  email?: string | null;
+  image?: string | null;
+}
+
+export interface CustomSession {
+  user?: CustomUser;
+  expires: ISODateString;
+}
 
 export const authOptions: NextAuthOptions = {
   providers: [

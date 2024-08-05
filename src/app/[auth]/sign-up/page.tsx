@@ -172,7 +172,7 @@ export default function page() {
                 <div className="text-center mt-4">
                     <p>
                         Already Member?{' '}
-                        <Link href="/sign-in" className="text-blue-600 hover:text-blue-800 ">
+                        <Link href="/auth/sign-in" className="text-blue-600 hover:text-blue-800 ">
                             Sign in
                         </Link>
                     </p>
